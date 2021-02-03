@@ -5,11 +5,14 @@ import time
 from msvcrt import kbhit # Reading keyboard input
 from msvcrt import getch # Reading keyboard input
 
-l_vid = cv2.VideoCapture("test_footage/left-footage.MOV")
-r_vid = cv2.VideoCapture("test_footage/right-footage.MOV")
+l_vid_path = "test_footage/left-footage.mp4"
+r_vid_path = "test_footage/right-footage.mp4"
 
-l_vid.set(1,3000)
-r_vid.set(1,3000)
+l_vid = cv2.VideoCapture(l_vid_path)
+r_vid = cv2.VideoCapture(r_vid_path)
+
+# l_vid.set(1,3000)
+# r_vid.set(1,3000)
 
 
 l_framespersecond= int(l_vid.get(cv2.CAP_PROP_FPS))
@@ -30,13 +33,23 @@ dy = int(data[3])
 # Adjustment increment (in pixels)
 increment = 10
 
-with pyvirtualcam.Camera(width=3840, height=4320, fps=100) as virtual_cam:
+with pyvirtualcam.Camera(width=3840, height=4320, fps=5) as virtual_cam:
     while(True):
         t1 = time.time()
 
         # Capture frame-by-frame
         l_ret, l_frame = l_vid.read()
         r_ret, r_frame = r_vid.read()
+
+        # Restart video if we're out of frames
+        if not l_ret and not r_ret:
+            print("Restarting video")
+            l_vid = cv2.VideoCapture(l_vid_path)
+            r_vid = cv2.VideoCapture(r_vid_path)
+
+            l_ret, l_frame = l_vid.read()
+            r_ret, r_frame = r_vid.read()
+
 
         t2 = time.time()
         print("T1: ", t2-t1)
