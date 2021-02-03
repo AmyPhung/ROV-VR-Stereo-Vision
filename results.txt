@@ -1,4 +1,4 @@
 X Translation:
-30
-Y Translation:
 -60
+Y Translation:
+50
