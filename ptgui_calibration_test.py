@@ -47,16 +47,53 @@ retL, mtxL, distL, rvecsL, tvecsL = \
 retR, mtxR, distR, rvecsR, tvecsR = \
     cv2.fisheye.calibrate(obj_pts, img_ptsR, imgR_gray.shape[::-1], K_R, D_R)
 
-map1L, map2L = cv2.fisheye.initUndistortRectifyMap(K_L, D_L, np.eye(3), K_L, imgL_gray.shape[::-1], cv2.CV_16SC2)
-undistorted_imgL = cv2.remap(imgL, map1L, map2L, interpolation=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT)
 
-map1R, map2R = cv2.fisheye.initUndistortRectifyMap(K_R, D_R, np.eye(3), K_R, imgR_gray.shape[::-1], cv2.CV_16SC2)
-undistorted_imgR = cv2.remap(imgR, map1R, map2R, interpolation=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT)
+# STEP 2: Calibrate stereo pair -------------------------------------------------
+flags = 0
+flags |= cv2.CALIB_FIX_INTRINSIC
+# Here we fix the intrinsic camara matrixes so that only Rot, Trns, Emat and Fmat are calculated.
+# Hence intrinsic parameters are the same
+criteria_stereo= (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 30, 0.001)
 
-print(K_L)
-print(K_R)
-print(D_L)
-print(D_R)
+# This step is performed to transformation between the two cameras and calculate Essential and Fundamenatl matrix
+retS, new_mtxL, distL, new_mtxR, distR, Rot, Trns, Emat, Fmat = \
+    cv2.stereoCalibrate(obj_pts, img_ptsL, img_ptsR, mtxL, distL, mtxR, distR,
+                        imgL_gray.shape[::-1], criteria_stereo, flags)
+
+
+# https://learnopencv.com/making-a-low-cost-stereo-camera-using-opencv/
+#### STEP 3: Stereo Rectification #######################################
+# Using the camera intrinsics and the rotation and translation between
+# the cameras, we can now apply stereo rectification. Stereo
+# rectification applies rotations to make both camera image planes be
+# in the same plane. Along with the rotation matrices, the
+# stereoRectify method also returns the projection matrices in the new
+# coordinate space.
+
+rectify_scale= 1
+rect_l, rect_r, proj_mat_l, proj_mat_r, Q, roiL, roiR = \
+    cv2.stereoRectify(new_mtxL, distL, new_mtxR, distR,
+                      imgL_gray.shape[::-1], Rot, Trns, rectify_scale, (0,0))
+"""
+TODO: Save these parameters
+"""
+
+#### STEP 4: ###########################################################
+#  Compute the mapping required to obtain the undistorted rectified stereo image pair
+Left_Stereo_Map= cv2.initUndistortRectifyMap(new_mtxL, distL, rect_l, proj_mat_l,
+                                             imgL_gray.shape[::-1], cv2.CV_16SC2)
+Right_Stereo_Map= cv2.initUndistortRectifyMap(new_mtxR, distR, rect_r, proj_mat_r,
+                                              imgR_gray.shape[::-1], cv2.CV_16SC2)
+
+print(Left_Stereo_Map)
+print(Right_Stereo_Map)
+
+#### STEP 5: Create 3D Frame ###########################################
+Left_nice = cv2.remap(imgL,Left_Stereo_Map[0],Left_Stereo_Map[1],
+                      cv2.INTER_LANCZOS4, cv2.BORDER_CONSTANT, 0)
+Right_nice = cv2.remap(imgR,Right_Stereo_Map[0],Right_Stereo_Map[1],
+                       cv2.INTER_LANCZOS4, cv2.BORDER_CONSTANT, 0)
+
 cv2.namedWindow("Left image before rectification", cv2.WINDOW_NORMAL)
 cv2.namedWindow("Right image before rectification", cv2.WINDOW_NORMAL)
 cv2.drawChessboardCorners(imgL, chessboard_dims, cornersL, True)
@@ -64,9 +101,22 @@ cv2.drawChessboardCorners(imgR, chessboard_dims, cornersR, True)
 cv2.imshow("Left image before rectification", imgL)
 cv2.imshow("Right image before rectification", imgR)
 
+# Single-camera rectification
+map1L, map2L = cv2.fisheye.initUndistortRectifyMap(K_L, D_L, np.eye(3), K_L, imgL_gray.shape[::-1], cv2.CV_16SC2)
+undistorted_imgL = cv2.remap(imgL, map1L, map2L, interpolation=cv2.INTER_LINEAR)#, borderMode=cv2.BORDER_CONSTANT)
+
+map1R, map2R = cv2.fisheye.initUndistortRectifyMap(K_R, D_R, np.eye(3), K_R, imgR_gray.shape[::-1], cv2.CV_16SC2)
+undistorted_imgR = cv2.remap(imgR, map1R, map2R, interpolation=cv2.INTER_LINEAR)#, borderMode=cv2.BORDER_CONSTANT)
+
 cv2.namedWindow("Left image after rectification", cv2.WINDOW_NORMAL)
 cv2.namedWindow("Right image after rectification", cv2.WINDOW_NORMAL)
 cv2.imshow("Left image after rectification", undistorted_imgL)
 cv2.imshow("Right image after rectification", undistorted_imgR)
+
+# Stereo rectification
+cv2.namedWindow("Left image after stereo rectification", cv2.WINDOW_NORMAL)
+cv2.namedWindow("Right image after stereo rectification", cv2.WINDOW_NORMAL)
+cv2.imshow("Left image after stereo rectification", Left_nice)
+cv2.imshow("Right image after stereo rectification", Right_nice)
 
 cv2.waitKey(0)
