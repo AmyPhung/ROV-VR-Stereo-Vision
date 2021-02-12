@@ -8,10 +8,10 @@ import matplotlib.pyplot as plt
 imgL = cv2.imread("calibration_files/left_checkerboard.png")
 imgR = cv2.imread("calibration_files/right_checkerboard.png")
 
-chessboard_dims = (12,12)
+chessboard_dims = (15,12)
 
 # STEP 0: LOAD CHESSBOARD POINTS FROM PTGUI ---------------------------------------------------------
-with open("calibration_files/calibrationfile12x12.pts") as f:
+with open("calibration_files/calibrationfile_full_board.pts") as f:
   ptgui_dict = json.load(f)
 
 raw_points = ptgui_dict["project"]["controlpoints"]
@@ -24,15 +24,21 @@ for pt in raw_points:
     cornersL.append(l_pt)
     cornersR.append(r_pt)
 
+print("raw_points size: ", len(raw_points))
+
 cornersL = np.array(cornersL, np.float32)
 cornersR = np.array(cornersR, np.float32)
+print("cornersL size: ", len(cornersL))
 
 # STEP 1: CALIBRATE CAMERAS ---------------------------------------------------------
 imgL_gray = cv2.cvtColor(imgL, cv2.COLOR_BGR2GRAY)
 imgR_gray = cv2.cvtColor(imgR, cv2.COLOR_BGR2GRAY)
 
 objp = np.zeros((1, chessboard_dims[0]*chessboard_dims[1], 3), np.float32)
+print("objp\n", objp.shape)
+
 objp[0,:,:2] = np.mgrid[0:chessboard_dims[0],0:chessboard_dims[1]].T.reshape(-1, 2)
+# print(objp[0,:,:2])
 
 K_L, K_R = np.zeros((3, 3)), np.zeros((3, 3))
 D_L, D_R = np.zeros((4, 1)), np.zeros((4, 1))
@@ -41,8 +47,17 @@ img_ptsL = [cornersL]
 img_ptsR = [cornersR]
 obj_pts = [objp]
 
+# print("obj_pts info:")
+# print(obj_pts[0].shape)
+# print(obj_pts[0][0,:,:].T)
+
+# obj_pts contains a meshgrid covering the whole area of the chessboard and
+# this gives the coordinates of each vertex on the chessboard (where it should be
+# were the image not warped)
+
 retL, mtxL, distL, rvecsL, tvecsL = \
     cv2.fisheye.calibrate(obj_pts, img_ptsL, imgL_gray.shape[::-1], K_L, D_L)
+# print("K_L\n",K_L)
 
 retR, mtxR, distR, rvecsR, tvecsR = \
     cv2.fisheye.calibrate(obj_pts, img_ptsR, imgR_gray.shape[::-1], K_R, D_R)
@@ -85,8 +100,8 @@ Left_Stereo_Map= cv2.initUndistortRectifyMap(new_mtxL, distL, rect_l, proj_mat_l
 Right_Stereo_Map= cv2.initUndistortRectifyMap(new_mtxR, distR, rect_r, proj_mat_r,
                                               imgR_gray.shape[::-1], cv2.CV_16SC2)
 
-print(Left_Stereo_Map)
-print(Right_Stereo_Map)
+# print(Left_Stereo_Map)
+# print(Right_Stereo_Map)
 
 #### STEP 5: Create 3D Frame ###########################################
 Left_nice = cv2.remap(imgL,Left_Stereo_Map[0],Left_Stereo_Map[1],
