@@ -47,13 +47,16 @@ img_ptsL = [cornersL]
 img_ptsR = [cornersR]
 obj_pts = [objp]
 
-# print("obj_pts info:")
-# print(obj_pts[0].shape)
-# print(obj_pts[0][0,:,:].T)
+print("img_ptsL info:")
+print(img_ptsL[0].shape)
+print(img_ptsL[0][:,:,:].T)
 
 # obj_pts contains a meshgrid covering the whole area of the chessboard and
 # this gives the coordinates of each vertex on the chessboard (where it should be
 # were the image not warped)
+
+# img_ptsL contains the x,y coordinates of all the chessboard points that were
+# marked in the calibration file 
 
 retL, mtxL, distL, rvecsL, tvecsL = \
     cv2.fisheye.calibrate(obj_pts, img_ptsL, imgL_gray.shape[::-1], K_L, D_L)
