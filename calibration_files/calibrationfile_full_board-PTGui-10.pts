@@ -1,0 +1,300 @@
+# ptGui project file
+
+#-encoding utf8
+#-pathseparator \
+#-fileversion 100
+#-vfov 1.8000000000000000e+02
+#-resolution 300
+#-outputfile 
+#-hasbeenoptimized 1
+#-hvcpmode 1
+#-jpegparameters 95 0
+#-tiffparameters 8bit packbits alpha_assoc
+#-psdparameters 8bit packbits layered
+#-qtvrparameters 800 600 1 1000 70 0 0 -180 180 0 -90 90 90 10 120 1
+#-honorexiforientation 1
+#-exrparameters withalpha
+#-hdroutputtonemapped
+#-hdrfileformat openexr
+#-hdrmethod fuse
+#-hdrtiffparameters float lzw alpha_assoc
+#-hdrpsdparameters float none layered
+#-tonemapv2settings PTGTM 1 0.45 20 20 0 0 2 1 0.15 0
+#-fusesettings 0.5 0 0.2 0 0
+#-cameracurve 3.441228 -0.551975 0.294423 -0.09563199999999999 0.07213899999999999
+#-vignettingparams 
+#-wbexposure 0.0000000000000000e+00 0.0000000000000000e+00 0.0000000000000000e+00
+#-pmoptexposuremode auto
+#-pmoptvignettingmode enabled
+#-pmoptwbmode disabled
+#-pmoptflaremode disabled
+#-pmoptcameracurvemode auto
+#-exposurecorrection 0
+#-tonemapldrpanorama 0
+#-blendweight 1.0000000000000000e+02 1.0000000000000000e+02
+#-optviewpoint 00
+#-useexif1
+#-batchbuilder_useexif 0
+#-blender ptgui
+#-blenderfeather -5.9999999999999998e-01
+#-interpolator default
+#-simpleoptimizer
+#-simpleoptanchorimage 0
+#-simpleoptfov 1
+#-simpleoptlens heavyplusshift
+#-imgrotate44
+#-cpinactive
+#-imginactive
+#-linktoprevious
+#-previewinactive
+#-outputcrop 0.0000000000000000e+00 1.0000000000000000e+00 0.0000000000000000e+00 1.0000000000000000e+00
+#-location default
+#-viewingdirection default
+#-alignsettings_generatecp 1
+#-alignsettings_optimize 1
+#-alignsettings_optimizeprealign 1
+#-alignsettings_straighten 1
+#-alignsettings_fit 1
+#-alignsettings_chooseprojection 1
+#-alignsettings_setoptimumsize 1
+#-alignsettings_limitsize 10000
+#-alignsettings_optimizeexposure 0
+#-hdrsettings_defaultlinkmode link
+#-hdrsettings_donotask 0
+#-batchsettings_align 0
+#-batchsettings_stitch 1
+#-batchsettings_stitchonlyifcontrolpoints 1
+#-defaultprojectfilenamemode firstsourceimage
+#-defaultprojectfilename_custom " Panorama"
+#-defaultprojectfoldermode sourcefolder
+#-defaultprojectfolder_custom ""
+#-defaultpanoramafilenamemode asproject
+#-defaultpanoramafilename_custom ""
+#-defaultpanoramafoldermode projectfolder
+#-defaultpanoramafolder_custom ""
+#-userelativesourceimagepaths 1
+#-optimizeraskreinitialize 1
+#-applytemplate_lens 1
+#-applytemplate_imageparams 1
+#-applytemplate_crop 1
+#-applytemplate_mask 1
+#-applytemplate_panoramasettings 1
+#-applytemplate_projectsettings 1
+#-applytemplate_optimizer 1
+#-rect_compression_x 0.0000000000000000e+00
+#-rect_compression_y 0.0000000000000000e+00
+#-cylindrical_compression_y 0.0000000000000000e+00
+#-transverse_cylindrical_compression_x 0.0000000000000000e+00
+#-vedutismo_compression_x 1.0000000000000000e+00
+#-transverse_vedutismo_compression_y 1.0000000000000000e+00
+#-stereographic_compression 1.0000000000000000e+00
+#-rectifisheye_compression 1.0000000000000000e+00
+#-previewwidth 2964
+#-previewheight 1482
+#-globalcrop 0 0 0 0 0 -0.0001302083333333333 0 0.285546875
+#-fixaspect 1
+#-stitcher ptgui
+#-optimizer ptgui
+#-ccdcrop 1.0000000000000000e+00
+
+# Panorama settings:
+p w11858 h5929 f2 v3.6000000000000000e+02 u0.0000000000000000e+00 n"JPEG g0 q95"
+m g0.0000000000000000e+00 i0
+
+# source images:
+#-dummyimage
+# The following line contains a 'dummy image' containing some global parameters for the project:
+o w1 h1 y0 r0.0000000000000000e+00 p0.0000000000000000e+00 v6.7541693378187617e+01 a1.0138936807949070e+00 b-1.4616494254207026e+00 c-2.1117571118191295e-01 f2 d-6.3989219982443736e+01 e-6.8592360446342440e+01 g0.0000000000000000e+00 t0.0000000000000000e+00
+#-imgfile 3840 2176 "..\..\Downloads\161_04551.png"
+#-viewpoint 0.0000000000000000e+00 0.0000000000000000e+00 0.0000000000000000e+00 0.0000000000000000e+00 0.0000000000000000e+00
+#-exposureparams 0.0000000000000000e+00 0.0000000000000000e+00 0.0000000000000000e+00 0.0000000000000000e+00
+o f2 y0 r0 p0 v=0 a=0 b=0 c=0 d=0 e=0 g=0 t=0 C823,3017,-9,2185
+
+#-imgfile 3840 2176 "..\..\Downloads\162_04551.png"
+#-viewpoint 0.0000000000000000e+00 0.0000000000000000e+00 0.0000000000000000e+00 0.0000000000000000e+00 0.0000000000000000e+00
+#-exposureparams 0.0000000000000000e+00 0.0000000000000000e+00 0.0000000000000000e+00 0.0000000000000000e+00
+o f2 y4.854799566781452 r0.3859007106128445 p1.151482489873132 v=0 a=0 b=0 c=0 d=0 e=0 g=0 t=0 C823,3017,-9,2185
+
+# Control points:
+c n1 N2 x1099 y666 X998 Y743 t0
+c n1 N2 x1172 y638 X1054 Y719 t0
+c n1 N2 x1263 y608 X1125 Y692 t0
+c n1 N2 x1371 y581 X1210 Y665 t0
+c n1 N2 x1503 y556 X1316 Y636 t0
+c n1 N2 x1658 y537 X1441 Y612 t0
+c n1 N2 x1829 y529 X1589 Y592 t0
+c n1 N2 x2002 y534 X1755 Y582 t0
+c n1 N2 x2165 y552 X1925 Y585 t0
+c n1 N2 x2309 y579 X2090 Y599 t0
+c n1 N2 x2429 y609 X2236 Y624 t0
+c n1 N2 x2527 y639 X2361 Y652 t0
+c n1 N2 x2607 y667 X2463 Y681 t0
+c n1 N2 x2672 y694 X2547 Y710 t0
+c n1 N2 x2725 y718 X2614 Y736 t0
+c n1 N2 x1080 y786 X981 Y855 t0
+c n1 N2 x1151 y768 X1036 Y838 t0
+c n1 N2 x1239 y747 X1104 Y819 t0
+c n1 N2 x1348 y726 X1187 Y799 t0
+c n1 N2 x1483 y706 X1292 Y780 t0
+c n1 N2 x1642 y691 X1419 Y761 t0
+c n1 N2 x1821 y685 X1573 Y744 t0
+c n1 N2 x2005 y689 X1746 Y735 t0
+c n1 N2 x2176 y702 X1926 Y737 t0
+c n1 N2 x2324 y724 X2099 Y749 t0
+c n1 N2 x2447 y745 X2251 Y767 t0
+c n1 N2 x2543 y767 X2377 Y788 t0
+c n1 N2 x2623 y787 X2480 Y810 t0
+c n1 N2 x2686 y806 X2563 Y831 t0
+c n1 N2 x2738 y822 X2630 Y849 t0
+c n1 N2 x1071 y917 X973 Y973 t0
+c n1 N2 x1141 y906 X1027 Y963 t0
+c n1 N2 x1226 y897 X1093 Y955 t0
+c n1 N2 x1335 y886 X1176 Y945 t0
+c n1 N2 x1471 y876 X1281 Y934 t0
+c n1 N2 x1633 y868 X1408 Y925 t0
+c n1 N2 x1817 y865 X1563 Y917 t0
+c n1 N2 x2006 y867 X1740 Y912 t0
+c n1 N2 x2183 y874 X1927 Y914 t0
+c n1 N2 x2333 y884 X2104 Y919 t0
+c n1 N2 x2455 y895 X2258 Y928 t0
+c n1 N2 x2553 y904 X2386 Y938 t0
+c n1 N2 x2631 y914 X2488 Y948 t0
+c n1 N2 x2693 y923 X2571 Y959 t0
+c n1 N2 x2743 y930 X2636 Y967 t0
+c n1 N2 x1072 y1047 X974 Y1090 t0
+c n1 N2 x1143 y1050 X1029 Y1092 t0
+c n1 N2 x1228 y1051 X1096 Y1093 t0
+c n1 N2 x1337 y1053 X1177 Y1095 t0
+c n1 N2 x1471 y1056 X1282 Y1097 t0
+c n1 N2 x1633 y1057 X1408 Y1099 t0
+c n1 N2 x1816 y1057 X1562 Y1100 t0
+c n1 N2 x2005 y1056 X1739 Y1100 t0
+c n1 N2 x2181 y1055 X1925 Y1101 t0
+c n1 N2 x2331 y1052 X2103 Y1098 t0
+c n1 N2 x2454 y1049 X2257 Y1096 t0
+c n1 N2 x2552 y1046 X2385 Y1094 t0
+c n1 N2 x2628 y1044 X2487 Y1091 t0
+c n1 N2 x2691 y1042 X2568 Y1089 t0
+c n1 N2 x2741 y1041 X2634 Y1088 t0
+c n1 N2 x1086 y1177 X986 Y1208 t0
+c n1 N2 x1157 y1188 X1041 Y1218 t0
+c n1 N2 x1243 y1201 X1109 Y1229 t0
+c n1 N2 x1351 y1215 X1193 Y1242 t0
+c n1 N2 x1484 y1227 X1294 Y1254 t0
+c n1 N2 x1642 y1236 X1422 Y1265 t0
+c n1 N2 x1819 y1240 X1573 Y1275 t0
+c n1 N2 x2002 y1236 X1744 Y1279 t0
+c n1 N2 x2172 y1228 X1924 Y1279 t0
+c n1 N2 x2320 y1215 X2096 Y1271 t0
+c n1 N2 x2440 y1200 X2247 Y1259 t0
+c n1 N2 x2539 y1185 X2372 Y1245 t0
+c n1 N2 x2616 y1171 X2474 Y1231 t0
+c n1 N2 x2680 y1159 X2556 Y1217 t0
+c n1 N2 x2731 y1149 X2624 Y1206 t0
+c n1 N2 x1109 y1297 X1006 Y1318 t0
+c n1 N2 x1181 y1318 X1063 Y1337 t0
+c n1 N2 x1269 y1339 X1133 Y1355 t0
+c n1 N2 x1377 y1360 X1216 Y1376 t0
+c n1 N2 x1507 y1380 X1320 Y1396 t0
+c n1 N2 x1659 y1394 X1444 Y1415 t0
+c n1 N2 x1826 y1400 X1590 Y1430 t0
+c n1 N2 x1997 y1394 X1753 Y1437 t0
+c n1 N2 x2159 y1381 X1921 Y1435 t0
+c n1 N2 x2301 y1361 X2084 Y1423 t0
+c n1 N2 x2420 y1337 X2229 Y1405 t0
+c n1 N2 x2518 y1314 X2351 Y1383 t0
+c n1 N2 x2597 y1292 X2454 Y1360 t0
+c n1 N2 x2661 y1272 X2537 Y1339 t0
+c n1 N2 x2714 y1254 X2605 Y1320 t0
+c n1 N2 x1139 y1408 X1033 Y1422 t0
+c n1 N2 x1214 y1434 X1093 Y1445 t0
+c n1 N2 x1302 y1461 X1163 Y1470 t0
+c n1 N2 x1409 y1486 X1248 Y1497 t0
+c n1 N2 x1535 y1509 X1352 Y1521 t0
+c n1 N2 x1678 y1524 X1472 Y1544 t0
+c n1 N2 x1834 y1531 X1612 Y1560 t0
+c n1 N2 x1992 y1526 X1763 Y1569 t0
+c n1 N2 x2143 y1509 X1919 Y1565 t0
+c n1 N2 x2278 y1486 X2070 Y1551 t0
+c n1 N2 x2394 y1457 X2208 Y1530 t0
+c n1 N2 x2491 y1429 X2327 Y1504 t0
+c n1 N2 x2571 y1401 X2428 Y1476 t0
+c n1 N2 x2637 y1373 X2511 Y1448 t0
+c n1 N2 x2692 y1350 X2582 Y1422 t0
+c n1 N2 x1174 y1507 X1064 Y1515 t0
+c n1 N2 x1250 y1535 X1125 Y1542 t0
+c n1 N2 x1339 y1565 X1199 Y1572 t0
+c n1 N2 x1444 y1592 X1286 Y1599 t0
+c n1 N2 x1564 y1614 X1386 Y1625 t0
+c n1 N2 x1699 y1631 X1503 Y1650 t0
+c n1 N2 x1841 y1636 X1633 Y1666 t0
+c n1 N2 x1987 y1630 X1773 Y1673 t0
+c n1 N2 x2126 y1613 X1918 Y1670 t0
+c n1 N2 x2254 y1589 X2057 Y1656 t0
+c n1 N2 x2365 y1560 X2186 Y1634 t0
+c n1 N2 x2461 y1527 X2301 Y1606 t0
+c n1 N2 x2541 y1497 X2398 Y1577 t0
+c n1 N2 x2610 y1467 X2484 Y1546 t0
+c n1 N2 x2667 y1439 X2555 Y1516 t0
+c n1 N2 x1212 y1593 X1100 Y1599 t0
+c n1 N2 x1288 y1622 X1162 Y1628 t0
+c n1 N2 x1377 y1653 X1236 Y1659 t0
+c n1 N2 x1478 y1679 X1321 Y1686 t0
+c n1 N2 x1593 y1701 X1421 Y1714 t0
+c n1 N2 x1717 y1714 X1531 Y1735 t0
+c n1 N2 x1850 y1720 X1653 Y1751 t0
+c n1 N2 x1982 y1713 X1782 Y1758 t0
+c n1 N2 x2111 y1698 X1916 Y1755 t0
+c n1 N2 x2230 y1675 X2045 Y1741 t0
+c n1 N2 x2337 y1646 X2165 Y1720 t0
+c n1 N2 x2431 y1613 X2274 Y1692 t0
+c n1 N2 x2510 y1581 X2369 Y1662 t0
+c n1 N2 x2579 y1549 X2453 Y1629 t0
+c n1 N2 x2638 y1519 X2524 Y1599 t0
+c n1 N2 x1250 y1666 X1135 Y1673 t0
+c n1 N2 x1326 y1697 X1200 Y1702 t0
+c n1 N2 x1412 y1725 X1273 Y1731 t0
+c n1 N2 x1509 y1749 X1357 Y1760 t0
+c n1 N2 x1618 y1769 X1452 Y1784 t0
+c n1 N2 x1734 y1782 X1558 Y1806 t0
+c n1 N2 x1855 y1786 X1671 Y1820 t0
+c n1 N2 x1978 y1780 X1792 Y1825 t0
+c n1 N2 x2097 y1766 X1914 Y1822 t0
+c n1 N2 x2208 y1745 X2033 Y1810 t0
+c n1 N2 x2310 y1717 X2146 Y1790 t0
+c n1 N2 x2400 y1685 X2249 Y1763 t0
+c n1 N2 x2479 y1652 X2341 Y1733 t0
+c n1 N2 x2548 y1621 X2422 Y1703 t0
+c n1 N2 x2607 y1589 X2492 Y1670 t0
+c n1 N2 x1286 y1730 X1170 Y1737 t0
+c n1 N2 x1361 y1758 X1235 Y1766 t0
+c n1 N2 x1445 y1785 X1308 Y1795 t0
+c n1 N2 x1539 y1808 X1390 Y1820 t0
+c n1 N2 x1641 y1825 X1482 Y1844 t0
+c n1 N2 x1749 y1837 X1581 Y1864 t0
+c n1 N2 x1862 y1839 X1689 Y1875 t0
+c n1 N2 x1974 y1834 X1799 Y1880 t0
+c n1 N2 x2085 y1821 X1912 Y1877 t0
+c n1 N2 x2189 y1801 X2023 Y1865 t0
+c n1 N2 x2284 y1776 X2127 Y1848 t0
+c n1 N2 x2372 y1746 X2225 Y1822 t0
+c n1 N2 x2449 y1715 X2314 Y1795 t0
+c n1 N2 x2518 y1683 X2393 Y1764 t0
+c n1 N2 x2577 y1651 X2463 Y1732 t0
+c n1 N2 x1321 y1783 X1206 Y1793 t0
+c n1 N2 x1394 y1810 X1270 Y1820 t0
+c n1 N2 x1476 y1834 X1343 Y1848 t0
+c n1 N2 x1566 y1856 X1421 Y1872 t0
+c n1 N2 x1662 y1872 X1510 Y1893 t0
+c n1 N2 x1763 y1881 X1604 Y1910 t0
+c n1 N2 x1867 y1883 X1704 Y1921 t0
+c n1 N2 x1971 y1878 X1806 Y1924 t0
+c n1 N2 x2074 y1866 X1911 Y1921 t0
+c n1 N2 x2172 y1848 X2014 Y1911 t0
+c n1 N2 x2262 y1824 X2112 Y1893 t0
+c n1 N2 x2346 y1796 X2203 Y1871 t0
+c n1 N2 x2423 y1767 X2290 Y1845 t0
+c n1 N2 x2489 y1737 X2365 Y1818 t0
+c n1 N2 x2549 y1706 X2435 Y1786 t0
+
+v v a b c d e y2 r2 p2 r2 p2
